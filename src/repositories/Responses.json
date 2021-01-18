@@ -1,0 +1,23 @@
+[
+    {
+        "id": "117010",
+        "avgTemp": "39.15600000000001",
+        "avgTempUncertainty": "0.37",
+        "date": "2013-07-01",
+        "city": "Ahvaz",
+        "country": "Iran",
+        "latitude": "31.35N",
+        "longitude": "49.01E"
+    }
+]
+
+{
+    "id": "8599213",
+    "avgTemp": "39.25600000000001",
+    "avgTempUncertainty": "0.37",
+    "dt": "2021-01-18",
+    "city": "Ahvaz",
+    "country": "Iran",
+    "latitude": "31.35N",
+    "longitude": "49.01E"
+}

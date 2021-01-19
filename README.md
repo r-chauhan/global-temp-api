@@ -17,31 +17,15 @@ src
 ├── main.py
 ├── models
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── abc.cpython-37.pyc
-│   │   ├── base.cpython-37.pyc
-│   │   ├── temp_data.cpython-37.pyc
-│   │   └── user.cpython-37.pyc
 │   ├── base.py
 │   └── temp_data.py
 ├── repositories
 │   ├── Queries.pgsql
 │   ├── Responses.json
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── temp_data.cpython-37.pyc
-│   │   └── user.cpython-37.pyc
 │   └── temp_data.py
 ├── resources
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── db.cpython-37.pyc
-│   │   ├── healthcheck.cpython-37.pyc
-│   │   ├── temp_data.cpython-37.pyc
-│   │   └── user.cpython-37.pyc
 │   ├── healthcheck.py
 │   └── temp_data.py
 ├── tests

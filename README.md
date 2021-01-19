@@ -47,7 +47,11 @@ Upon completion you might need to switch to new virtual env using:
 source .venv/bin/activate
 ```
 ### Table Load
-Make sure the intended `GlobalLandTemperaturesByCity.csv` is located in `src/data` location, and run:
+Make sure that:
+- Database migration has been completed successfully, which can be done via `docker-compose` (see [Run](#Run)).
+- The intended `GlobalLandTemperaturesByCity.csv` is located in `src/data` location 
+
+Load csv data using:
 ```
 make load-table
 ```

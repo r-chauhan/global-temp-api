@@ -2,10 +2,10 @@
 Sample flask based application for database querying via RESTful API. Kaggle [climate change](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) data-set is intended to be used as a data-source for this project.
 
 # Project Structure
-Below are main modules of the project:
+
 ![API-Diagram](./src/docs/diagram-api.png)
 
-The main app is contained within `src` directory which has following contents:
+Structure above shows high level modules and architecture, and the main app is contained within `src` directory having following contents:
 ```
 src
 ├── app.py

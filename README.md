@@ -1,5 +1,5 @@
 # global-temp-api
-Sample flask based application for database querying via RESTful API.
+Sample flask based application for database querying via RESTful API. Kaggle [climate change](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) data-set is intended to be used as a data-source for this project.
 
 
 # Setup and Run

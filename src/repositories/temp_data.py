@@ -63,7 +63,12 @@ class TempRepository:
 
     @staticmethod
     def create(
-        avg_temp: float, avg_temp_uncertainty: float, city: str, country: str, lat: str, lon: str
+        avg_temp: float,
+        avg_temp_uncertainty: float,
+        city: str,
+        country: str,
+        lat: str,
+        lon: str,
     ) -> dict:
         """ Create row """
         result: dict = {}
@@ -85,7 +90,7 @@ class TempRepository:
                 "city": str(temp.City),
                 "country": str(temp.Country),
                 "latitude": str(temp.Latitude),
-                "longitude": str(temp.Longitude)
+                "longitude": str(temp.Longitude),
             }
         except IntegrityError:
             TempData.rollback()
@@ -98,7 +103,12 @@ class TempRepository:
         result: dict = {}
         try:
             temp = TempData(id=id, AverageTemperature=avg_temp)
-            temp.update()
+            temp = TempData.query.filter_by(id=id).first()
+
+            temp.AverageTemperature = avg_temp
+            temp.commit()
+
+            result = TempData.query.filter_by(id=id).first()
             result = {
                 "id": str(temp.id),
                 "avgTemp": str(temp.AverageTemperature),
@@ -107,10 +117,10 @@ class TempRepository:
                 "city": str(temp.City),
                 "country": str(temp.Country),
                 "latitude": str(temp.Latitude),
-                "longitude": str(temp.Longitude)
+                "longitude": str(temp.Longitude),
             }
         except IntegrityError:
             TempData.rollback()
-            # raise ResourceExists("row unaltered")
+            raise RuntimeError("row unaltered")
 
         return result

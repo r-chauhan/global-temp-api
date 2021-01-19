@@ -10,9 +10,7 @@ class TempData(Resource):
             temp = TempRepository.get(year)
             return temp, 200
         except Exception as e:
-            # response = jsonify(e.name)
-            # response.status_code = e.code
-            return jsonify(str(e))
+            return ("Not found", 404)
 
 
 class TempAdd(Resource):
@@ -33,16 +31,15 @@ class TempAdd(Resource):
             )
             return temp, 200
         except Exception as e:
-            import pdb; pdb.set_trace()
             response = jsonify(e.to_dict())
             response.status_code = e.status_code
             return response
 
 
 class TempUpdate(Resource):
-    def put(self):
+    def patch(self):
         """
-        Update row
+        Update row based on id
         """
         request_json = request.get_json(silent=True)
         id: str = request_json["id"]

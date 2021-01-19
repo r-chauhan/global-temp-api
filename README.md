@@ -1,6 +1,55 @@
 # global-temp-api
 Sample flask based application for database querying via RESTful API. Kaggle [climate change](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) data-set is intended to be used as a data-source for this project.
 
+# Project Structure
+Below are main modules of the project:
+![API-Diagram](./src/docs/diagram-api.png)
+
+The main app is contained within `src` directory which has following contents:
+```
+src
+├── app.py
+├── config.py
+├── data
+│   └── GlobalLandTemperaturesByCity.csv
+├── exceptions.py
+├── load_mydb.py
+├── main.py
+├── models
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-37.pyc
+│   │   ├── abc.cpython-37.pyc
+│   │   ├── base.cpython-37.pyc
+│   │   ├── temp_data.cpython-37.pyc
+│   │   └── user.cpython-37.pyc
+│   ├── base.py
+│   └── temp_data.py
+├── repositories
+│   ├── Queries.pgsql
+│   ├── Responses.json
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-37.pyc
+│   │   ├── temp_data.cpython-37.pyc
+│   │   └── user.cpython-37.pyc
+│   └── temp_data.py
+├── resources
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-37.pyc
+│   │   ├── db.cpython-37.pyc
+│   │   ├── healthcheck.cpython-37.pyc
+│   │   ├── temp_data.cpython-37.pyc
+│   │   └── user.cpython-37.pyc
+│   ├── healthcheck.py
+│   └── temp_data.py
+├── tests
+│   ├── __init__.py
+│   ├── conftest.py
+│   └── test_utils.py
+└── utils.py
+```
 
 # Setup and Run
 

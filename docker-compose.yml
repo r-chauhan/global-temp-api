@@ -26,8 +26,6 @@ services:
       - db
   api:
     build: .
-    env_file:
-      - .env
     restart: on-failure
     environment:
       POSTGRES_DB: mydb

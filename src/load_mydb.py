@@ -6,6 +6,7 @@ from utils import get_env_variable
 
 
 DEFAULT_DB_URI = get_env_variable("DEFAULT_DB_URI")
+CSV_PATH = "./src/data/GlobalLandTemperaturesByCity.csv"
 
 
 class TempsDB:
@@ -40,4 +41,4 @@ def load_data(filename, Model):
 
 
 if __name__ == "__main__":
-    load_data("./src/data/GlobalLandTemperaturesByCity.csv", temp_data.TempData)
+    load_data(CSV_PATH, temp_data.TempData)

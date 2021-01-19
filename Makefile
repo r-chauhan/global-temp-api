@@ -2,8 +2,18 @@ SHELL=/bin/bash
 
 .PHONY: bootstrap run run-docker lint test install
 
+setup:
+	python3 -m venv .venv && source .venv/bin/activate && \
+	pip install -r requirements.txt
+
+load-table:
+	python3 ./src/load_mydb.py
+
 run-docker:
 	@docker-compose up
+
+stop-docker:
+	@docker-compose down
 
 run-database:
 	@docker-compose up db
@@ -14,17 +24,14 @@ test:
 lint:
 	@flake8 resources/* tests/*
 
-db-migrate:
-	@FLASK_APP=src/main.py flask db migrate --head $(branch)@head --message $(message)
+test:
+	py.test -vv
 
 db-revision:
 	@FLASK_APP=src/main.py flask db revision --message $(message)
 
 db-upgrade:
 	@FLASK_APP=src/main.py flask db upgrade heads
-
-db-test-upgrade:
-	@ENV=test FLASK_APP=src/main.py flask db upgrade heads
 
 db-upgrade-docker:
 	@docker-compose run api make db-upgrade

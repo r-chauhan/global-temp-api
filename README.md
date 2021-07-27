@@ -100,7 +100,6 @@ The original intent was to integrate API documentation using [apispec](https://a
 Sample responses can also be found in `src/repositories/Responses.json`.
 
 ## Notes
-- Approximately 5 hours were spent on this repo with most time dedicated to initial setup and data load.
 - Data load for a large csv file (`>500 Mb` in this case) was a bit of a challenge and in a real-world scenario would need optimisations or need to be handled by external orchestrator.
 - Integrated documentation was an initial thought, but documentation was done via online Postman documenter. [Collection](./collection_postman.postman_collection.json) is also available locally for use with Postman client.
 - This example is meant to be a minimum viable template (mostly to serve use case and showcase structure) and lacks production ready implementations such as: comprehensive unit/integration test coverage, authentication, and robust exception handling.
